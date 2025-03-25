@@ -1,0 +1,18 @@
+.Row {
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.RegForm {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 50%;
+  height: 400px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}

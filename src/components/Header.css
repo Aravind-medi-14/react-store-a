@@ -1,0 +1,18 @@
+.App-Header-Row {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(99, 224, 116);
+  align-items: center;
+  padding: 20px;
+}
+.App-Header-Right button {
+  display: inline-block;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.App-Header-Link {
+  margin: 5px;
+  font-size: 20px;
+}

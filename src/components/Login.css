@@ -1,0 +1,18 @@
+.Row{
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+}
+.LoginForm{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 500px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    
+}
