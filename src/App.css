@@ -1,7 +1,14 @@
 .App {
   text-align: center;
 }
-
+.btn-pink{
+  border: 2px solid rgb(238, 29, 116);
+  background-color: aliceblue;
+}
+.btn-pink:hover{
+  background-color: rgb(238, 29, 116);
+  color: white;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

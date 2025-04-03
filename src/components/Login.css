@@ -16,3 +16,21 @@
     flex-direction: column;
     
 }
+Button{
+  background-color: rgb(84, 99, 207);
+  color: white;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+}
+.CAbtn{
+    background-color: rgb(6, 7, 15);
+    color: white;
+    width: 100px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+    text-decoration: none;
+}

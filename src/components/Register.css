@@ -10,9 +10,25 @@
   width: 50%;
   height: 400px;
   text-align: center;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
+}
+.Reg-Table {
+  margin: 5px;
+}
+.Reg-Table td {
+  border: 2px solid black;
+  padding: 5px;
+  margin: 10px;
+}
+.Reg-Table th {
+  background-color: gray;
+  color: white;
+  padding: 5px;
+  border: 2px solid black;
+  margin: 1px;
 }

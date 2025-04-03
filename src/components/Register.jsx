@@ -1,17 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Register.css";
+import { useRef } from "react";
+import { appContext } from "../App";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
-  const [Details, setDetails] = useState([]);
-  const [Detail, setDetail] = useState({});
+  const { Details, setDetails, Detail, setDetail } = useContext(appContext);
+  const Navigate = useNavigate();
+
+  const [msg, setMsg] = useState();
+  const msgref = useRef();
   const handleSubmit = () => {
     const isDetail = Details.find((val) => val.email === Detail.email);
     if (!isDetail) {
+      setMsg();
       setDetails([...Details, Detail]);
-    }
-    else{
-      alert("You are already in the list!!")
+      // setDetail({ ...Detail, name: "", email: "", pswd: "" });
+      Navigate("/");
+    } else {
+      setMsg("User already exists !!");
+      msgref.current.style.color = "red";
     }
   };
   const handleDelete = (email) => {
@@ -22,6 +31,7 @@ export default function Register() {
       <div className="Row">
         <div className="RegForm">
           <h3 style={{ marginBottom: "30px" }}>Registration Form</h3>
+          <p ref={msgref}>{msg}</p>
           <p>
             <input
               type="text"
@@ -51,12 +61,26 @@ export default function Register() {
           </p>
         </div>
         <div className="RegForm">
-          {Details.map((val, index) => (
-            <li key={index}>
-              {val.name} - {val.email} - {val.pswd}
-              <button onClick={() => handleDelete(val.email)}>Delete</button>
-            </li>
-          ))}
+          <table className="Reg-Table">
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th></th>
+            </tr>
+            {Details &&
+              Details.map((val, index) => (
+                <tr key={index}>
+                  <td>{val.name} </td> <td>{val.email} </td>
+                  <td>{val.pswd} </td>
+                  <td>
+                    <button onClick={() => handleDelete(val.email)}>
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+          </table>
         </div>
       </div>
     </div>
